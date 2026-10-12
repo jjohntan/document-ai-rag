@@ -18,6 +18,14 @@ source .venv/bin/activate    # Linux
 pip install -r requirements.txt
 ```
 
+### Run the program
+
+```bash
+python src/main.py <document path> <prompt>
+
+example: python src/main.py data/example.pdf "What is the topic of the document?"
+```
+
 ### File structure
 
 ```bash
@@ -25,9 +33,9 @@ document-ai-rag/
 ├── data/
 │   └── example.pdf
 ├── src/
-│   ├── __main__.py
 │   ├── chunking.py
 │   ├── gen_prompt.py
+│   ├── main.py
 │   ├── parser.py
 │   └── vector_store.py
 ├── .env
