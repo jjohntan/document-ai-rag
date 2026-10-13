@@ -24,14 +24,27 @@ prompt = st.chat_input(
 
 if prompt and prompt["files"]:
     text = extract_text_from_pdf(prompt["files"][0])
-    st.write(text)
     chunks = chunk_by_char(text)
     retriever = VectorStore(chunks)
     retriever.encode_similarity()
+    st.session_state["retriever"] = retriever
     
 if prompt and prompt.text:
-    st.markdown(prompt.text)
-# result = retriever.search(prompt.text)
+    st.chat_message("user").write(prompt.text)
+
+    if "retriever" in st.session_state:
+        retriever = st.session_state["retriever"]
+        result = retriever.search(prompt.text)
+        prompt = generate_prompt(prompt.text, result)
+        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        interaction = client.interactions.create(
+        model=os.getenv("MODEL"),
+        input=prompt
+        )
+        st.chat_message("assistant").write(interaction.output_text)
+
+    else:
+        st.warning("Please attach a PDF first.")
 
 # def main() -> None:
 #     arg = parse_arg()
