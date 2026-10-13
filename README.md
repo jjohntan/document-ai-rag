@@ -2,9 +2,6 @@
 
 Built an end-to-end RAG application that allows users to upload PDF documents and ask questions about their contents. The system extracts and chunks document text, generates embeddings, stores them in a vector database, retrieves relevant context through semantic search, and uses an LLM to generate grounded answers
 
-![alt text](<image/Screenshot 2026-10-13 at 20-51-54 Streamlit.png>)
-![alt text](<image/Screenshot 2026-10-13 at 20-54-41 Streamlit.png>)
-
 ## 🚀 Installation
 
 ```bash
@@ -27,7 +24,7 @@ pip install -r requirements.txt
 python -m streamlit run src/app.py
 ```
 
-### File structure
+### 📁 File structure
 
 ```bash
 document-ai-rag/
@@ -43,6 +40,9 @@ document-ai-rag/
 ├── README.md 
 └── requirements.txt
 ```
+
+![alt text](<image/Screenshot 2026-10-13 at 20-51-54 Streamlit.png>)
+![alt text](<image/Screenshot 2026-10-13 at 20-54-41 Streamlit.png>)
 
 ### Reference
 https://docs.python.org/3/library/argparse.html#type
