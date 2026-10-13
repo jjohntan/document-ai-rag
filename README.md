@@ -2,8 +2,8 @@
 
 Built an end-to-end RAG application that allows users to upload PDF documents and ask questions about their contents. The system extracts and chunks document text, generates embeddings, stores them in a vector database, retrieves relevant context through semantic search, and uses an LLM to generate grounded answers
 
-![alt text](<Screenshot 2026-10-13 at 20-51-54 Streamlit.png>)
-![alt text](<Screenshot 2026-10-13 at 20-54-41 Streamlit.png>)
+![alt text](<image/Screenshot 2026-10-13 at 20-51-54 Streamlit.png>)
+![alt text](<image/Screenshot 2026-10-13 at 20-54-41 Streamlit.png>)
 
 ## 🚀 Installation
 
