@@ -12,11 +12,26 @@ load_dotenv()
 st.title("Document AI RAG")
 
 
-uploaded_file = st.file_uploader("Choose a file", type=["pdf"], accept_multiple_files=False)
-if uploaded_file is not None:
-    st.text(uploaded_file.name)
-    text = extract_text_from_pdf(uploaded_file)
-    print(text)
+# uploaded_file = st.file_uploader("Choose a file", type=["pdf"], accept_multiple_files=False)
+# if uploaded_file is not None:
+#     text = extract_text_from_pdf(uploaded_file)
+
+prompt = st.chat_input(
+    "Say something and/or attach an image",
+    accept_file=True,
+    file_type=["pdf"],
+)
+
+if prompt and prompt["files"]:
+    text = extract_text_from_pdf(prompt["files"][0])
+    st.write(text)
+    chunks = chunk_by_char(text)
+    retriever = VectorStore(chunks)
+    retriever.encode_similarity()
+    
+if prompt and prompt.text:
+    st.markdown(prompt.text)
+# result = retriever.search(prompt.text)
 
 # def main() -> None:
 #     arg = parse_arg()
