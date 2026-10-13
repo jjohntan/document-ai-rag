@@ -13,7 +13,7 @@ st.title("Document AI RAG")
 
 
 prompt = st.chat_input(
-    "Say something and/or attach an image",
+    "Ask something and attach a PDF",
     accept_file=True,
     file_type=["pdf"],
 )

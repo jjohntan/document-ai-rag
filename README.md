@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ### Run the program
 
 ```bash
-python -m streamlit run src/main.py
+python -m streamlit run src/app.py
 ```
 
 ### File structure
