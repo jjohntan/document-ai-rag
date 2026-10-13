@@ -12,7 +12,7 @@ class VectorStore:
         self.chunks = _chunks
 
 
-    def  encode_similarity(self):
+    def  encode(self):
 
         # The sentences to encode
         # sentences = [
