@@ -28,12 +28,10 @@ python -m streamlit run src/app.py
 
 ```bash
 document-ai-rag/
-├── data/
-│   └── example.pdf
 ├── src/
+│   ├── app.py
 │   ├── chunking.py
 │   ├── gen_prompt.py
-│   ├── main.py
 │   ├── parser.py
 │   └── vector_store.py
 ├── .env
@@ -41,8 +39,8 @@ document-ai-rag/
 └── requirements.txt
 ```
 
-![alt text](<image/Screenshot 2026-10-13 at 20-51-54 Streamlit.png>)
-![alt text](<image/Screenshot 2026-10-13 at 20-54-41 Streamlit.png>)
+![alt text](image/Demo.png)
+![alt text](image/Result.png)
 
 ### Reference
 https://docs.python.org/3/library/argparse.html#type
