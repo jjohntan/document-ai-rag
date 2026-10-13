@@ -7,7 +7,7 @@ def  parse_arg() -> argparse.Namespace:
         prog='Document Ai', 
         description='Extract text from PDF')
     parser.add_argument('pdf_path', type=str, help='Path to PDF file')
-    parser.add_argument('prompt', type=str, help='Prompt to ask the model')
+    # parser.add_argument('prompt', type=str, help='Prompt to ask the model')
     return parser.parse_args()
 
 
