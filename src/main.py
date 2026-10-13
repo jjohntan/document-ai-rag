@@ -12,6 +12,12 @@ load_dotenv()
 st.title("Document AI RAG")
 
 
+uploaded_file = st.file_uploader("Choose a file", type=["pdf"], accept_multiple_files=False)
+if uploaded_file is not None:
+    st.text(uploaded_file.name)
+    text = extract_text_from_pdf(uploaded_file)
+    print(text)
+
 # def main() -> None:
 #     arg = parse_arg()
 

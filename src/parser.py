@@ -11,8 +11,16 @@ def  parse_arg() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def  extract_text_from_pdf(pdf_path: str):
-    doc = pymupdf.open(pdf_path) # open a document
+def  extract_text_from_pdf(filename):
+    # If it's a file-like object (e.g. Streamlit UploadedFile)
+    if hasattr(filename, "read"):
+        doc = pymupdf.open(stream=filename.read(), filetype="pdf")
+    # If raw bytes were passed
+    elif isinstance(filename, bytes):
+        doc = pymupdf.open(stream=filename, filetype="pdf")
+    # Otherwise treat as a file path string
+    else:
+        doc = pymupdf.open(filename) # open a document
     pages = []
 
     for page in doc: # iterate the document pages
