@@ -21,9 +21,7 @@ pip install -r requirements.txt
 ### Run the program
 
 ```bash
-python src/main.py <document path> <prompt>
-
-example: python src/main.py data/example.pdf "What is the topic of the document?"
+python -m streamlit run src/main.py
 ```
 
 ### File structure
